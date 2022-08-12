@@ -4,6 +4,7 @@ use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,25 +17,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//-------------------------------------------------
+// common resource Routes
+//-------------------------------------------------
+
+//index - show all listings
+//show - show single listing 
+//create - show form to create  new listing 
+//store - store new listing
+//edit - show form to edit listing
+//update - update listing
+//destroy - edit listing 
+
 //All listings
-Route::get('/', function () {
+Route::get('/', [ListingController::class, 'index']);
 
-    return view('listings', [
 
-        'heading' => 'Latest Listings',
-        'listings' => Listing::all()
-
-    ]);
-});
-
+//form to create new listing / job vacancies
+Route::get('/listings/create', [ListingController::class, 'create']);
 
 //single Listing using the Model
-Route::get('/listings/{listing}', function (Listing $listing) {
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
-    return view('listing', [
-        'listing' => $listing
-    ]);
-});
+
+
 
 
 Auth::routes();

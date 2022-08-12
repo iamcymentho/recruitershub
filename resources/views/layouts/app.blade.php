@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="images/favicon.ico" />
 
+        
+        <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
         {{-- bootstrap cdn --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -17,6 +22,18 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <style>
+            /* .mylogo {
+
+  --animate-duration: 30s;
+          } */
+
+          :root {
+  --animate-delay: 2s;
+}
+        </style>
+
+        
 
         {{-- defining tailwin color class --}}
         <script src="https://cdn.tailwindcss.com"></script>
@@ -35,10 +52,17 @@
         <title>RecruitersHub | Find Software Development Jobs</title>
     </head>
     <body class="mb-48">
-        <nav class="flex justify-between items-center mb-4">
-            <a href="/"
-                ><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo"
-            /></a>
+       <div class="container">
+
+         <nav class="flex justify-between items-center mb-4">
+             <div class="inline">
+                <a href="/">
+    <img class="w-24 animate__animated animate__shakeX animate__slower animate__infinite animate__delay-5s my-elem" src="{{ asset('images/hiring.png') }}" alt="" class="logo "/>
+    {{-- <img class="w-32" src="{{ asset('images/rebiglogo.png') }}" alt="" class="logo "/> --}}
+        
+        </a>
+             </div>
+
             <ul class="flex space-x-6 mr-6 text-lg">
                 <li>
                     <a href="register.html" class="hover:text-laravel"
@@ -54,6 +78,9 @@
             </ul>
         </nav>
 
+        {{-- container ends here --}}
+       </div>
+
         <main class="py-4">
             @yield('content')
         </main>
@@ -65,10 +92,15 @@
             <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
             <a
-                href="create.html"
+                href="/listings/create"
                 class="absolute top-1/3 right-10 bg-black hover:bg-laravel text-white py-2 px-5"
                 >Post Job</a
             >
         </footer>
+
+        <script>
+            const element = document.querySelector('.my-element');
+         element.style.setProperty('--animate-slower', '30.0s');
+        </script>
     </body>
 </html>

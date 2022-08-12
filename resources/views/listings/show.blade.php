@@ -4,8 +4,8 @@
 @section('content')
 @include('partials._search')
 
-<a href="/" class="inline-block text-black ml-4 mb-4"
-                ><i class="fa-solid fa-arrow-left text-teal-700"></i> Back
+<a href="/" class=" btn btn-dark shadow inline-block hover:bg-laravel text-light ml-4 mb-4"
+                ><i class="fa-solid fa-arrow-left text-light "></i> Back
             </a>
 
 <div class="mx-4">
