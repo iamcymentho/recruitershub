@@ -14,8 +14,8 @@
                         class="flex flex-col items-center justify-center text-center"
                     >
                         <img
-                            class="w-48 mr-6 mb-6"
-                            src="{{ asset ('images/no-image.png') }}"
+                            class="w-64 mr-6 mb-6"
+                            src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/corrected.png') }}"
                             alt=""
                         />
 

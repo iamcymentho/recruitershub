@@ -21,4 +21,10 @@
 @endunless
 
  </div>
+
+ <div class="mt-6 p-4">
+
+    {{-- making use of the pagination --}}
+    {{ $listings->links() }}
+ </div>
 @endsection

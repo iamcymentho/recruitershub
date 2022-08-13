@@ -11,6 +11,8 @@ class Listing extends Model
 
     protected $primaryKey = 'listing_id';
 
+    protected $fillable = ['title', 'company', 'location', 'website', 'email', 'logo', 'description', 'tags'];
+
     public function scopeFilter($query, array $filters)
 
     {

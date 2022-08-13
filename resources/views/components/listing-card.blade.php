@@ -5,9 +5,11 @@
 <!-- Item 1 -->
                <x-card>
                     <div class="flex">
+
+                        {{-- finding the path of images and setting its default to the company logo 'corrected.png' in images folder if no image is found/uploaded --}}
                         <img
                             class="hidden w-48 mr-6 md:block"
-                            src="{{ asset('images/no-image.png') }}"
+                            src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/corrected.png') }}"
                             alt=""
                         />
                         <div>

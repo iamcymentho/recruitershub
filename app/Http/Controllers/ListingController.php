@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
 {
@@ -20,7 +21,18 @@ class ListingController extends Controller
             //add the filter like to be able to filter listing jobs based on the current resource_path and the current resource paths are specified via the tags being passed through the URL parameters
 
             //following the same sequence for the search bar . Adding the search to the tag in the filter like the following will result in the search bar.
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
+
+            //------------------------------------
+            // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
+            //------------------------------------
+
+            // to add pagination , we are going to switch get with paginate then pass parameters
+
+            // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->orderBy('listing_id', 'desc')->paginate(10)
+
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(10)
+
+
 
         ]);
     }
@@ -42,9 +54,32 @@ class ListingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //using the dependency injection mechanism
     {
-        //
+        // dd($request->all());
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required', Rule::unique('listings', 'company')], //when specifying more than a rule you can use the array []. Note that when using unique in a rule you must state the table as well as the column name asset.
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'logo' => 'required',
+            'description' => 'required'
+        ]);
+
+
+        //checking to see if the logo/picture field is not empty then store it in logos in the public folder
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            # code...
+        }
+
+        Listing::create($formFields); // if the form passes , then the model should create the information into the database
+
+
+
+        return redirect('/')->with('message', 'Job listing created successfully!');
     }
 
     /**

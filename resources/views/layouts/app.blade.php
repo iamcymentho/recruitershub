@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="images/favicon.ico" />
 
-        
         <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -22,17 +21,10 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <style>
-            /* .mylogo {
+        
 
-  --animate-duration: 30s;
-          } */
-
-          :root {
-  --animate-delay: 2s;
-}
-        </style>
-
+         {{-- Alpine cdn --}}
+    <script src="//unpkg.com/alpinejs" defer></script>  
         
 
         {{-- defining tailwin color class --}}
@@ -98,9 +90,6 @@
             >
         </footer>
 
-        <script>
-            const element = document.querySelector('.my-element');
-         element.style.setProperty('--animate-slower', '30.0s');
-        </script>
+       <x-flash-message/>
     </body>
 </html>

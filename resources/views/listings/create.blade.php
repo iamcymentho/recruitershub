@@ -9,10 +9,12 @@
                         <h2 class="text-2xl font-bold uppercase mb-1">
                             Create a Gig
                         </h2>
-                        <p class="mb-4">Post a gig to find a developer</p>
+                        <p class="mb-4">Post a job listing to find an employee</p>
                     </header>
 
-                    <form action="">
+                    <form action="/listings" method="POST" enctype="multipart/form-data">
+                        @csrf
+
                         <div class="mb-6">
                             <label
                                 for="company"
@@ -22,8 +24,12 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="company"
+                                name="company" value="{{ old('company') }}"
                             />
+
+                            @error('company')
+                            <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p>    
+                            @enderror
                         </div>
 
                         <div class="mb-6">
@@ -33,9 +39,13 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="title"
+                                name="title" value="{{ old('title') }}"
                                 placeholder="Example: Senior Laravel Developer"
                             />
+
+                             @error('title')
+                            <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p>    
+                            @enderror
                         </div>
 
                         <div class="mb-6">
@@ -47,9 +57,13 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="location"
+                                name="location" value="{{ old('location') }}"
                                 placeholder="Example: Remote, Boston MA, etc"
                             />
+
+                             @error('location')
+                            <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p>    
+                            @enderror
                         </div>
 
                         <div class="mb-6">
@@ -59,8 +73,12 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="email"
+                                name="email" value="{{ old('email') }}"
                             />
+
+                             @error('email')
+                            <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p>    
+                            @enderror
                         </div>
 
                         <div class="mb-6">
@@ -73,8 +91,12 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="website"
+                                name="website" value="{{ old('website') }}"
                             />
+
+                             @error('website')
+                            <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p>    
+                            @enderror
                         </div>
 
                         <div class="mb-6">
@@ -84,9 +106,13 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="tags"
+                                name="tags" value="{{ old('tags') }}"
                                 placeholder="Example: Laravel, Backend, Postgres, etc"
                             />
+
+                             @error('tags')
+                            <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p>    
+                            @enderror
                         </div>
 
                         <div class="mb-6">
@@ -96,8 +122,12 @@
                             <input
                                 type="file"
                                 class="border border-gray-200 rounded p-2 w-full form-control"
-                                name="logo"
+                                name="logo" value="{{ old('logo') }}"
                             />
+
+                            @error('logo')
+                                <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p> 
+                            @enderror
                         </div>
 
                         <div class="mb-6">
@@ -112,7 +142,11 @@
                                 name="description"
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
-                            ></textarea>
+                            >{{ old('description') }}</textarea>
+
+                             @error('description')
+                            <p class="text-red-500 text-xs mt-1"><b>{{ $message }}</b></p>    
+                            @enderror
                         </div>
 
                         <div class="mb-6 text-center">

@@ -36,6 +36,17 @@ Route::get('/', [ListingController::class, 'index']);
 //form to create new listing / job vacancies
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+
+//storing post request from a form / submitting a form
+Route::post('/listings', [ListingController::class, 'store']);
+
+
+
+
+
+
+
+
 //single Listing using the Model
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
