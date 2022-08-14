@@ -40,6 +40,13 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 //storing post request from a form / submitting a form
 Route::post('/listings', [ListingController::class, 'store']);
 
+//show EDIT form 
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+// updating the edited form 
+Route::post('/listings/{listing}', [ListingController::class, 'update']);
+
+
 
 
 

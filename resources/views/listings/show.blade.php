@@ -59,5 +59,13 @@
                         </div>
                     </div>
                 </x-card>
+
+
+                <x-card class="mt-4 p-2 flex space-x-6">
+                    <a href="/listings/{{ $listing->listing_id}}/edit">
+                    <i class="fa fa-solid fa-pencil"></i> Edit
+                    </a>
+
+                </x-card>
             </div>
 @endsection

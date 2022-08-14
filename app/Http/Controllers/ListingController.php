@@ -102,9 +102,12 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Listing $listing)
     {
         //
+        return view('listings.edit', [
+            'listing' => $listing
+        ]);
     }
 
     /**
@@ -114,9 +117,49 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Listing $listing)
     {
         //
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required'], //when specifying more than a rule you can use the array []. Note that when using unique in a rule you must state the table as well as the column name asset.
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'logo' => 'required',
+            'description' => 'required'
+        ]);
+
+        // // Eloquent ORM - 
+        // $listing = Listing::find($listing_id);
+
+        // //database columns  //form fields name
+
+        // $listing->title = $request->title;
+        // $listing->company = $request->company;
+        // $listing->location = $request->location;
+        // $listing->website = $request->website;
+        // $listing->email = $request->email;
+        // $listing->tags = $request->tags;
+        // $listing->logo = $request->logo;
+        // $listing->description = $request->description;
+
+        // $listing->update();
+
+
+        //checking to see if the logo/picture field is not empty then store it in logos in the public folder
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            # code...
+        }
+
+        $listing->update($formFields); // if the form passes , then the model should create the information into the database
+
+
+        // return back()->with('message', 'Listing Successfully updated');
+
+        return redirect('/listings/{listing}/edit')->with('message', 'Job listing updated successfully!');
     }
 
     /**
