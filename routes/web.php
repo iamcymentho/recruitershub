@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Listing;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListingController;
 
 /*
@@ -45,6 +45,9 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
 // updating the edited form 
 Route::post('/listings/{listing}', [ListingController::class, 'update']);
+
+// delete  a record from form 
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 
 
 
