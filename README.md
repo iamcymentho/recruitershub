@@ -1,64 +1,32 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+- RECRUITERSHUB is a job listing web application . Companies / recruiters sign up and post job listings and avialable roles looking to be filled . The public comes , search for job listings / opportunities according to their areas of specialization and contact the employer or recruiter .
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- HOMEPAGE ; This is the feel of the homepage . which is where the active listings will be listed .
 
-## About Laravel
+![Screenshot (64)](https://user-images.githubusercontent.com/105985964/184868395-a64f0ebc-2a08-4592-b4b2-51ccde8d3884.png)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- JOB LISTINGS  ; Job listings which of course will be displayed on the homepage will show in the sequence below
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Screenshot (65)](https://user-images.githubusercontent.com/105985964/184869255-282659e8-233c-43e4-a7c5-bb320cfb7d60.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- SHOWING A PARTICULAR JOB LISTING 
 
-## Learning Laravel
+ ![Screenshot (66)](https://user-images.githubusercontent.com/105985964/184872307-8c048c4f-d99f-40bf-b9bd-4a0b2dd7bd50.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- FILTERING JOB LISTING ; Filtering job listings by clicking on tags and using the search button. 
 
-## Laravel Sponsors
+![Screenshot (71)](https://user-images.githubusercontent.com/105985964/184871018-366a79ec-390f-47b8-b156-41b5acaae51f.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- REGISTRATION FORM FOR COMPANIES / RECRUITERS 
 
-### Premium Partners
+![Screenshot (67)](https://user-images.githubusercontent.com/105985964/184871984-5839cee1-cc61-445e-a9b4-0c8669b03ea4.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- LOGIN FORM 
 
-## Contributing
+![Screenshot (68)](https://user-images.githubusercontent.com/105985964/184872090-3826d8c3-92e7-4070-8c88-ca986262b7ec.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-CREATING A GIG OR JOB LISTING 
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![Screenshot (69)](https://user-images.githubusercontent.com/105985964/184872531-76373836-f528-46af-9b2d-15cc10069c41.png)
+![Screenshot (70)](https://user-images.githubusercontent.com/105985964/184872632-b8a50982-4e3d-4946-8482-e2e2d58e862b.png)
